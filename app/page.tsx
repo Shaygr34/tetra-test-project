@@ -56,7 +56,7 @@ export default function Home() {
               { num: "10K+", label: "Active Users" },
               { num: "99.9%", label: "Uptime" },
               { num: "150+", label: "Countries" },
-              { num: "4.9★", label: "Rating" },
+              { num: "5.0★", label: "Rating" },
             ].map((s) => (
               <div key={s.label}>
                 <div className="text-3xl font-bold text-teal-700">{s.num}</div>
