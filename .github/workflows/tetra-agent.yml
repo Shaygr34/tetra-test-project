@@ -56,9 +56,10 @@ jobs:
             6. Commit: agent(type): description
             7. Push and open PR against main.
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          max_turns: "25"
-          model: "claude-sonnet-4-6"
-          allowed_tools: "Bash,Read,Write,Edit,Glob"
+          claude_args: >-
+            --max-turns 25
+            --model claude-sonnet-4-6
+          show_full_output: "true"
 
       - name: Report completion
         if: always()
