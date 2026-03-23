@@ -55,12 +55,10 @@ jobs:
             5. Append to AGENT_LOG.md.
             6. Commit: agent(type): description
             7. Push and open PR against main.
-          claude_args: >-
-            --max-turns 25
-            --model claude-sonnet-4-6
-            --allowed-tools "Bash,Read,Write,Edit,Glob"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          max_turns: "25"
+          model: "claude-sonnet-4-6"
+          allowed_tools: "Bash,Read,Write,Edit,Glob"
 
       - name: Report completion
         if: always()
