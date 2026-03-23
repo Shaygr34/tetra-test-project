@@ -28,8 +28,8 @@ Append-only record of all automated Tetra Agent actions.
 **Action:** Implement accordion/dropdown for partner specification text
 
 **Files Modified:**
-- `app/components/PartnerCard.tsx` — Created new client component with per-card open/closed state, chevron icon, and Tailwind `max-h`/`opacity` transition animation
-- `app/components/PartnersSection.tsx` — Created section component with sample partner data (Vercel, Next.js) and grid layout
-- `app/page.tsx` — Imported and rendered `<PartnersSection />` below the main content block
+- `app/components/PartnerCard.tsx` — New client component; shows partner image and name by default, with description hidden behind a "Read more" toggle. Uses `grid-rows` transition (0fr → 1fr) for smooth Tailwind CSS expand/collapse animation. Each card manages its own open/closed state independently.
+- `app/components/PartnersSection.tsx` — New server component; renders a grid of three placeholder `PartnerCard` entries with sample partner data.
+- `app/page.tsx` — Imported and rendered `<PartnersSection />` below the existing hero content.
 
-**Notes:** No existing partners section found in codebase; created new components from scratch. Each card independently toggles its description via React `useState`. Transition uses `max-height` + `opacity` Tailwind classes for smooth animation without JS measurement.
+**Notes:** No external dependencies added. Accordion uses CSS grid row height trick for smooth height transition compatible with Tailwind v4. Multiple cards can be open simultaneously.
